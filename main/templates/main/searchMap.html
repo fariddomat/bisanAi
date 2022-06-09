@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h1>A Star Algorithm</h1>
+    <p>
+       To Search over map fill source and disatinations cities
+    </p>
+    <div class="row">
+        
+        <div class="col-md-12">
+            <p>
+                {{data|linebreaks}}
+            <p>
+            <div class="">
+                <form method="POST" action="searchMap">
+                    <div class="form-row">
+                    {% csrf_token %}
+                    {{search_form}} 
+                    </div>
+                    <button class="btn btn-danger btn-lg" type="submit">SEARCH</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h1>A Star Algorithm</h1>  
+    <p>
+        Fill textareas to add new map<br><br>
+        Refresh Page to fill with romania data
+    </p>
+    <div class="row">
+        <div class="col-md-12">
+            <div class=""> 
+                <p>
+                {{data|linebreaks}}
+                <p>
+                <form  method="POST" action="addMap">
+                    {% csrf_token %}
+                    {{add_map_form}}
+                    <button class="btn btn-primary btn-lg" type="submit">ADD MAP</button>
+                </form>
+            </div>
+
+        </div>
+       
+    </div>
+
+{% endblock content %}
